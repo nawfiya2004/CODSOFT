@@ -1,15 +1,10 @@
 import java.util.Scanner;
-
 public class CodSoft_Task3_ATM_Interface {
-
-
     static class BankAccount {
         private double balance;
-
         public BankAccount(double initialBalance) {
             this.balance = initialBalance;
         }
-
         public boolean deposit(double amount) {
             if (amount > 0) {
                 balance += amount;
@@ -17,7 +12,6 @@ public class CodSoft_Task3_ATM_Interface {
             }
             return false;
         }
-
         public boolean withdraw(double amount) {
             if (amount > 0 && amount <= balance) {
                 balance -= amount;
@@ -64,7 +58,6 @@ public class CodSoft_Task3_ATM_Interface {
                 }
             }
         }
-
         private void deposit() {
             Scanner scanner = new Scanner(System.in);
             System.out.print("Enter the amount to deposit: ");
@@ -75,7 +68,6 @@ public class CodSoft_Task3_ATM_Interface {
                 System.out.println("Deposit failed. Please enter a valid amount.");
             }
         }
-
         private void withdraw() {
             Scanner scanner = new Scanner(System.in);
             System.out.print("Enter the amount to withdraw: ");
@@ -86,13 +78,10 @@ public class CodSoft_Task3_ATM_Interface {
                 System.out.println("Withdrawal failed. Please ensure you have sufficient balance and enter a valid amount.");
             }
         }
-
         private void checkBalance() {
             System.out.println("Your current balance is: " + account.checkBalance());
         }
     }
-
-
     public static void main(String[] args) {
         BankAccount account = new BankAccount(1000);
         ATM atm = new ATM(account);
